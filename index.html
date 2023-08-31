@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHero Tube</title>
+
+    <!-- tailwind & daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Inter Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="w-11/12 mx-auto">
+    <!-- navbar starts -->
+    <header>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center mt-8">
+            <img class="w-[100px]" src="./Logo.png" alt="">
+            <button class="py-2 px-4 font-medium text-base rounded-md bg-[#25252533]">Sort by view</button>
+            <button class="py-2 px-4 font-medium text-[#FFF] rounded-md bg-[#FF1F3D]">Blog</button>
+        </div>
+        <div class="mt-5 bg-[#17171733]">
+            <hr>
+        </div>
+    </header>
+    <main>
+        <!-- tabs section -->
+        <section>
+            <div class="tabs flex flex-col md:flex-row gap-4 justify-center items-center md:gap-6 mt-5">
+                <a class="tab bg-[#25252526] rounded-sm px-4 font-medium text-base">All</a> 
+                <a class="tab bg-[#25252526] rounded-sm px-4 font-medium text-base">Music</a> 
+                <a class="tab bg-[#25252526] rounded-sm px-4 font-medium text-base">Comedy</a>
+                <a class="tab bg-[#25252526] rounded-sm px-4 font-medium text-base">Drawing</a>
+              </div>
+        </section>
+    </main>
 </body>
+
 </html>
