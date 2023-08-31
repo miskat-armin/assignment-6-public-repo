@@ -34,17 +34,32 @@
             <hr>
         </div>
     </header>
-    <main>
+    <main class="mb-12">
         <!-- tabs section -->
         <section>
-            <div class="tabs flex flex-col md:flex-row gap-4 justify-center items-center md:gap-6 mt-5">
-                <a class="tab bg-[#25252526] rounded-sm px-4 font-medium text-base">All</a> 
+            <div id="tab-container"
+                class="tabs flex flex-col md:flex-row gap-4 md:gap-6 mb-5 md:mb-0 justify-center items-center mt-5">
+                <!-- <a class="tab bg-[#25252526] rounded-sm px-4 font-medium text-base">All</a> 
                 <a class="tab bg-[#25252526] rounded-sm px-4 font-medium text-base">Music</a> 
                 <a class="tab bg-[#25252526] rounded-sm px-4 font-medium text-base">Comedy</a>
-                <a class="tab bg-[#25252526] rounded-sm px-4 font-medium text-base">Drawing</a>
-              </div>
+                <a class="tab bg-[#25252526] rounded-sm px-4 font-medium text-base">Drawing</a> -->
+            </div>
         </section>
+
+        <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-7">
+            <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                <figure><img src="./Icon.png" alt="Shoes" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Shoes!</h2>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div> -->
     </main>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
