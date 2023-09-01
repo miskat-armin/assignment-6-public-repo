@@ -25,26 +25,32 @@
         }
 
         .tab.selected {
-            border: 2px solid red;
             background-color: #FF1F3D;
             color: white;
+        }
+
+        .emptyPage{
+            position: 'absolute';
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
 
-<body class="w-11/12 mx-auto">
+<body class="flex flex-col min-h-screen w-11/12 mx-auto">
     <!-- navbar starts -->
     <header>
         <div class="flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center mt-8">
             <img class="w-[100px]" src="./Logo.png" alt="">
-            <button onclick="sortByViews()" class="py-2 px-4 font-medium text-base rounded-md bg-[#25252533]">Sort by view</button>
+            <button onclick="sortByViews()" id="sort-btn" class="py-2 px-4 font-medium text-base rounded-md bg-[#25252533]">Sort by view</button>
             <button class="py-2 px-4 font-medium text-[#FFF] rounded-md bg-[#FF1F3D]">Blog</button>
         </div>
         <div class="mt-5 bg-[#17171733]">
             <hr>
         </div>
     </header>
-    <main class="mb-12">
+    <main class="flex-1 flex flex-col">
         <!-- tabs section -->
         <section>
             <div id="tab-container"
@@ -56,7 +62,7 @@
             </div>
         </section>
 
-        <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-7">
+        <div id="card-container" class="flex-1">
             <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl">
                 <figure><img src="./Icon.png" alt="Shoes" /></figure>
                 <div class="card-body">
