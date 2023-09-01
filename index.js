@@ -1,8 +1,8 @@
+var sortedData;
+
 const handleCategory = async () => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/categories`);
     const data = await response.json();
-    // console.log(data.data[0].category);
-    // console.log(data.data);
 
     const tabContainer = document.getElementById('tab-container');
     data.data.forEach((category) => {
@@ -20,17 +20,12 @@ const handleCategory = async () => {
 
 }
 
-const handleLoadCategory = async (categoryID, selectedTab) => {
-
-    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryID}`);
-    const data = await response.json();
-
+const showData = (data) => {
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
 
     data.data?.forEach((cardItem) => {
-        console.log(cardItem);
-        // console.log(cardItem.authors);
+        // console.log(cardItem);
         const div = document.createElement('div');
         div.innerHTML = `
             <div class="pr-2">
@@ -46,8 +41,8 @@ const handleLoadCategory = async (categoryID, selectedTab) => {
                                         <p>${cardItem?.authors[0]?.profile_name}</p>
                                         <img class="w-[20px] h-[20px]" src="./blue-tick.jpg"
                                     </div>` :
-                `${cardItem?.authors[0]?.profile_name}`
-            }
+                                         `${cardItem?.authors[0]?.profile_name}`
+                                    }
                                 </p>
                             </div>
                             <p class="font-normal text-sm text-[#171717B3]">${cardItem.others?.views} views</p>
@@ -59,9 +54,29 @@ const handleLoadCategory = async (categoryID, selectedTab) => {
 
         cardContainer.appendChild(div);
     })
+}
 
-    // console.log(data.data);
-    // console.log(categoryID);
+const compareByViews = (a, b) => {
+    const viewsA = parseInt(a.others.views.replace(/[^\d]/g, ''), 10); 
+    const viewsB = parseInt(b.others.views.replace(/[^\d]/g, ''), 10);
+
+    return (viewsB - viewsA);
+}
+
+const sortByViews = () => {
+    sortedData.data.sort(compareByViews);
+    console.log(sortedData.data);
+    showData(sortedData);
+}
+
+const handleLoadCategory = async (categoryID, selectedTab) => {
+
+    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryID}`);
+    const data = await response.json();
+
+    showData(data);
+    sortedData = data;
+
     const tabContainer = document.getElementById('tab-container');
 
     if (selectedTab !== null) {
