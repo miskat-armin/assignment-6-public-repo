@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <!-- tailwind & daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Inter Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main>
+        <section>
+            <h1 class="text-5xl font-bold text-center my-8">BLOG</h1>
+        </section>
+        <section class="w-11/12 mx-auto">
+            <div class="collapse collapse-arrow bg-base-200 mb-2">
+                <input type="radio" name="my-accordion-2"/>
+                <div class="collapse-title text-xl font-medium">
+                    Discuss the scope of var, let, and const
+                </div>
+                <div class="collapse-content bg-white">
+                    <div class="flex flex-col gap-2">
+                        <span class="text-orange-700 text-xl font-bold">var:</span>
+                        <span class="font-semibold text-indigo-700">Function-Scoped:</span> Variables declared with var
+                        are function-scoped, which means they are only
+                        accessible within the function in which they are declared. If declared outside of any function,
+                        they become globally scoped, accessible throughout the entire program.
+
+                        <span class="font-semibold text-indigo-700">Hoisting:</span> Variables declared with var are
+                        hoisted to the top of their containing function or
+                        global context, which means the variable declaration is moved to the top of its enclosing scope
+                        during the compilation phase. However, the assignment remains in place. This can lead to
+                        unexpected behavior.
+                        <span class="font-semibold text-indigo-700">Reassignment:</span>You can reassign and redeclare a
+                        variable declared with var within the same scope.
+
+                        <span class="text-orange-700 text-xl font-bold">let:</span>
+                        <span class="font-semibold text-indigo-700">Block-Scoped:</span> Variables declared with let are
+                        block-scoped, meaning they are limited in scope to
+                        the block or statement in which they are defined. They are not hoisted to the top of the
+                        function or global context.
+                        <span class="font-semibold text-indigo-700">No Re-declaration:</span> You cannot redeclare a
+                        variable within the same scope using let, but you can
+                        reassign its value.
+
+                        <span class="text-orange-700 text-xl font-bold">const:</span>
+                        <span class="font-semibold text-indigo-700">Block-Scoped:</span> Like let, variables declared
+                        with const are block-scoped.
+                        <span class="font-semibold text-indigo-700">Constant Value:</span> Variables declared with const
+                        are constants, meaning their value cannot be
+                        reassigned after declaration. However, if the variable holds an object or array, the properties
+                        or elements of that object or array can still be modified.
+                    </div>
+                </div>
+            </div>
+            <div class="collapse collapse-arrow bg-base-200 mb-2">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">
+                    Tell us the use cases of null and undefined
+                </div>
+                <div class="collapse-content bg-white">
+                    <div class="flex flex-col gap-2">
+                        <span class="text-orange-700 text-xl font-bold">null:</span>
+
+                        <span class="font-semibold text-indigo-700">Explicit Absence of a Value:</span> null is often
+                        used to explicitly represent the absence of a value
+                        or the intentional empty state of an object or variable. It is typically assigned by developers
+                        to indicate that a variable or object property should have no value or reference to an object.
+
+                        <p class="text-center text-base font-bold my-4">
+                            <span class=" bg-slate-500 text-white p-2">let someValue = null;</span> // Explicitly
+                            indicating
+                            that 'someValue' has no meaningful value.
+                        </p>
+
+                        <span class="font-semibold text-indigo-700">Clearing Object References:</span> Developers may
+                        set an
+                        object property to null to clear its
+                        reference, which can help with memory management in situations where the object is no longer
+                        needed.
+                        <p class="text-center text-base font-bold my-4 text-white bg-slate-500 w-[50%] mx-auto">
+                            let myObject = { data: 'some data' };
+                            <br>
+                            myObject = null;
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <span class="text-orange-700 text-xl font-bold">undefined:</span>
+
+                        <span class="font-semibold text-indigo-700">Implicit Absence of a Value:</span> undefined
+                        represents the absence of an assigned value. In most
+                        cases, it occurs when you declare a variable but don't initialize it or when you access a
+                        non-existent object property or function argument.
+                        <p class="text-center text-base font-bold my-4 text-white bg-slate-500 w-[50%] mx-auto">
+                            let someVar;
+                            <br>
+                            let obj = {};
+                            <br>
+                            console.log(obj.nonExistentProperty);
+                        </p>
+                        <span class="font-semibold text-indigo-700">Function Return Values:</span> When a function
+                        doesn't explicitly return a value, it implicitly returns undefined.
+                        <p class="text-center text-base font-bold my-4 text-white bg-slate-500 w-[50%] mx-auto">
+                            function doSomething() {
+                            <br>
+                            // No return statement, so 'undefined' is returned.
+                            <br>
+                            }
+                        </p>
+                        <span class="font-semibold text-indigo-700">Function Parameters:</span> If a function is called
+                        with fewer arguments than declared in its parameters, the missing parameters are assigned the
+                        value undefined.
+                        <p class="text-center text-base font-bold my-4 text-white bg-slate-500 w-[50%] mx-auto">
+                            function greet(name) {
+                            <br>
+                            console.log(`Hello, ${name}!`);
+                            <br>
+                            }
+                            <br>
+                            greet();
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse collapse-arrow bg-base-200 mb-2">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">
+                    What do you mean by REST API?
+                </div>
+                <div class="collapse-content bg-white">
+                    <p>
+                        <span class="text-pink-600 text-xl font-bold">A REST API (Representational State Transfer Application Programming Interface)</span> is a standardized
+                        way for software applications to communicate over the internet using a set of rules and
+                        conventions. It allows systems to request and exchange data or perform actions on remote
+                        servers. REST APIs are widely used in web development for building scalable and stateless web
+                        services, often using HTTP methods like GET, POST, PUT, and DELETE to interact with resources
+                        represented as URLs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
